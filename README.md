@@ -14,7 +14,7 @@ This application together with DiscordChatExporter allows you to connect your Di
 - For Machine Learning;
 - To test applications that filter messages, E.G. GDPR Apps.
 
-#Basics
+# Basics
 The algorithm will automatically filter messages that it deems useless or against GDPR, such as:
 - Mentions;
 - Appointments;
