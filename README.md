@@ -1,5 +1,5 @@
 # Discord-Twitch_APPv0.1
-This application together with DiscordChatExporter allows you to connect your Discord Chat Channel with your Twitch Chat Channel.
+This application provides you with a connection between your Discord and Twitch channels chats.
 
 # What do you need to use?
 - Your Discord Token, [check here;](https://discordhelp.net/discord-token)
