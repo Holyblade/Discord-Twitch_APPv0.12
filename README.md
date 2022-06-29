@@ -16,7 +16,7 @@ The algorithm will automatically filter and remove messages that it deems useles
 - Images and other files attached;
 - HTTP and HTTPS links;
 - Any message that has a person's full name;
-- Duplicated Messages;
+- Duplicate Messages;
 - Emojis and Emoticons.
 
 # What is it useful for?
