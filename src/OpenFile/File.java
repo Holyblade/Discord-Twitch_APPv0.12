@@ -7,10 +7,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Writer;
+import java.util.HashSet;
+import java.util.Iterator;
 
 public class File {
 
 	private int processedTokens, removedTokens;
+	private HashSet<String> HashSetTokens = new HashSet<String>();
 
 	public int getprocessedTokens() {
 		return processedTokens;
@@ -28,7 +31,7 @@ public class File {
 		this.removedTokens = removedTokens;
 	}
 
-	public void ReadFile(String Input_File, String Output_Directory) throws Exception {
+	public void ReadFile(String Input_File) throws Exception {
 		BufferedReader Buffer = new BufferedReader(new InputStreamReader(new FileInputStream(Input_File), "UTF-8"));
 		String Line = Buffer.readLine();
 		int currentLine = 2;
@@ -41,26 +44,40 @@ public class File {
 							System.out.println("Token message number " + currentLine+ " removed due containing data against GDPR policies.");
 							removedTokens++;
 						} else {
-							WriteFile(Line, Output_Directory);
-							processedTokens++;
+							if (HashSetTokens.contains(Line)) {
+								System.out.println("Token message number " + currentLine + " removed due containing useless data.");
+								removedTokens++;
+							} else {
+								HashSetTokens.add(Line);
+								processedTokens++;
+							}
 						}
 					} else {
 						System.out.println("Token message number " + currentLine + " removed due containing useless data.");
 						removedTokens++;
 					}
+				} else {
+					System.out.println("Token message number " + currentLine + " removed due containing useless data.");
+					removedTokens++;
 				}
 			} else {
+				removedTokens++;
 				break;
 			}
 			currentLine++;
 		} while (Line != null);
+		Iterator<String> UniqueList = HashSetTokens.iterator();
+		while (UniqueList.hasNext()) {
+			String FormatedToken = UniqueList.next();
+			WriteFile(FormatedToken);
+		}
 		setprocessedTokens(processedTokens);
 		setremovedTokens(removedTokens);
 		Buffer.close();
 	}
 
-	private void WriteFile(String Chat, String Output_Directory) throws IOException {
-		Writer File = new BufferedWriter(new FileWriter(Output_Directory + "ChatTokens.txt", true));
+	private void WriteFile(String Chat) throws IOException {
+		Writer File = new BufferedWriter(new FileWriter("ChatTokens.txt", true));
 		File.append(Chat + "\n");
 		File.close();
 	}
