@@ -28,6 +28,7 @@ The algorithm will automatically filter and remove messages that it deems useles
 Simply place the jar in a folder with your chat in txt downloaded from discord via DiscordChatExplorer and run:
 - java -jar Discord-Twitch_APPv0.11.jar Yourfilename.txt
 The output will be a txt file named ChatTokens.txt with the Tokens ready to be used in AIO Tool or any other Message Applications for Twitch.
+
 Below is a brief example of a log generated from the execution:
 ```
 Token message number 2 removed due containing useless data.
