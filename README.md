@@ -26,7 +26,7 @@ The algorithm will automatically filter and remove messages that it deems useles
 
 # How to use
 Simply place the jar in a folder with your txt chat file downloaded from discord via DiscordChatExplorer and run:
-- java -jar Discord-Twitch_APPv0.11.jar Yourfilename.txt
+- java -jar Discord-Twitch_APPv0.12.jar JohnDoe_Chat.txt
 
 The output will be a file named ChatTokens.txt with the Tokens ready to be used in AIO Tool or any other Message Applications for Twitch.
 Below is a brief example of a log generated from the execution:
@@ -35,16 +35,32 @@ Token message number 2 removed due containing useless data.
 Token message number 3 removed due containing useless data.
 Token message number 4 removed due containing useless data.
 Token message number 5 removed due containing useless data.
-Token message number 6 removed due containing data against GDPR policies.
-Token message number 8 removed due containing useless data.
-Token message number 9 removed due containing useless data.
-Token message number 10 removed due containing data against GDPR policies.
-Token message number 12 removed due containing useless data.
-Token message number 13 removed due containing useless data.
+Token message number 11 removed due containing data against GDPR policies.
 Token message number 14 removed due containing data against GDPR policies.
+Token message number 15 removed due containing data against GDPR policies.
+Token message number 16 removed due containing data against GDPR policies.
+Token message number 17 removed due containing data against GDPR policies.
+Token message number 21 removed due containing data against GDPR policies.
+Token message number 22 removed due containing data against GDPR policies.
+Token message number 23 removed due containing data against GDPR policies.
+Token message number 24 removed due containing data against GDPR policies.
+Token message number 26 removed due containing data against GDPR policies.
+Generating ChatTokens.txt File, Please wait...
 Chat Tokens Successfully Generated!
-Tokens Processed: 3
-Removed Tokens: 12
+Tokens Processed: 1613975
+Tokens Removed: 15
+Ready Tokens: 1613960
+```
+
+# ChangeLog
+
+```diff
+v0.11 ⋮ 28/6/22
++ Stable Release
+
+v0.12 ⋮ 30/06/22
++ Updated useless data filter
+
 ```
 
 # Contact
