@@ -31,6 +31,7 @@ Simply place the jar in a folder with your txt chat file downloaded from discord
 The output will be a file named ChatTokens.txt with the Tokens ready to be used in AIO Tool or any other Message Applications for Twitch.
 Below is a brief example of a log generated from the execution:
 ```
+Token message number 1 removed due containing useless data.
 Token message number 2 removed due containing useless data.
 Token message number 3 removed due containing useless data.
 Token message number 4 removed due containing useless data.
@@ -47,9 +48,9 @@ Token message number 24 removed due containing data against GDPR policies.
 Token message number 26 removed due containing data against GDPR policies.
 Generating ChatTokens.txt File, Please wait...
 Chat Tokens Successfully Generated!
-Tokens Processed: 1613975
+Tokens Processed: 1613976
 Tokens Removed: 15
-Ready Tokens: 1613960
+Ready Tokens: 1613961
 ```
 
 # ChangeLog
