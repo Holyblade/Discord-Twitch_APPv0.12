@@ -1,4 +1,4 @@
-# Discord-Twitch_APPv0.11
+# Discord-Twitch_APPv0.12
 This application together with DiscordChatExplorer and AIOTool provides you with a connection between your Discord and Twitch channels chats.
 
 # What do you need to use?
