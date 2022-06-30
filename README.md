@@ -60,6 +60,7 @@ v0.11 ⋮ 28/6/22
 
 v0.12 ⋮ 30/06/22
 + Updated useless data filter
++ Added message to inform current state of execution
 
 ```
 
