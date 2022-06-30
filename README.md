@@ -59,7 +59,7 @@ Ready Tokens: 1613961
 v0.11 ⋮ 28/6/22
 + Stable Release
 
-v0.12 ⋮ 30/06/22
+v0.12 ⋮ 30/6/22
 + Updated useless data filter
 + Added message to inform current state of execution
 
