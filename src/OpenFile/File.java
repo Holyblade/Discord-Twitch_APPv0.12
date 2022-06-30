@@ -12,11 +12,15 @@ import java.util.Iterator;
 
 public class File {
 
-	private int processedTokens, removedTokens;
+	private int processedTokens, readyTokens, removedTokens;
 	private HashSet<String> HashSetTokens = new HashSet<String>();
 
 	public int getprocessedTokens() {
 		return processedTokens;
+	}
+
+	public int getreadyTokens() {
+		return readyTokens;
 	}
 
 	public int getremovedTokens() {
@@ -25,6 +29,10 @@ public class File {
 
 	private void setprocessedTokens(int processedTokens) {
 		this.processedTokens = processedTokens;
+	}
+
+	private void setreadyTokens(int readyTokens) {
+		this.readyTokens = readyTokens;
 	}
 
 	private void setremovedTokens(int removedTokens) {
@@ -40,8 +48,13 @@ public class File {
 			if (Line != null) {
 				if (!Line.trim().equals("")) {
 					if (Line != "Image" && Line != "?" && Line != "\n" && currentLine > 5) {
-						if (Line.contains("@") || Line.contains("(edited)") || Line.contains("Click to see attachment") || Line.contains("http") || Line.contains("[")) {
-							System.out.println("Token message number " + currentLine+ " removed due containing data against GDPR policies.");
+						if (Line.contains("@") || Line.contains("(edited)") || Line.contains("attachment")
+								|| Line.contains("http") || Line.contains("[") || Line.contains("{") || Line.equals("")
+								|| Line.equals("+") || Line.equals("-") || Line.equals("$") || Line.equals("$")
+								|| Line.equals("$") || Line.equals("!") || Line.equals("#") || Line.equals("%")
+								|| Line.equals("&") || Line.equals("*") || Line.equals(" ") || Line.equals("¨")
+								|| Line.equals("(") || Line.equals(")")) {
+							System.out.println("Token message number " + currentLine + " removed due containing data against GDPR policies.");
 							removedTokens++;
 						} else {
 							if (HashSetTokens.contains(Line)) {
@@ -49,7 +62,7 @@ public class File {
 								removedTokens++;
 							} else {
 								HashSetTokens.add(Line);
-								processedTokens++;
+								readyTokens++;
 							}
 						}
 					} else {
@@ -64,14 +77,16 @@ public class File {
 				removedTokens++;
 				break;
 			}
+			setprocessedTokens(currentLine);
 			currentLine++;
 		} while (Line != null);
+		System.out.println("Generating ChatTokens.txt File, Please wait...");
 		Iterator<String> UniqueList = HashSetTokens.iterator();
 		while (UniqueList.hasNext()) {
 			String FormatedToken = UniqueList.next();
 			WriteFile(FormatedToken);
 		}
-		setprocessedTokens(processedTokens);
+		setreadyTokens(readyTokens);
 		setremovedTokens(removedTokens);
 		Buffer.close();
 	}
